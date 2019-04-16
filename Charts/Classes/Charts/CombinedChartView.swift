@@ -124,7 +124,7 @@ open class CombinedChartView: BarLineChartViewBase, LineChartDataProvider, BarCh
             {
                 return nil
             }
-            return (_data as! CombinedChartData!).lineData
+            return (_data as! CombinedChartData?)!.lineData
         }
     }
     
@@ -138,7 +138,7 @@ open class CombinedChartView: BarLineChartViewBase, LineChartDataProvider, BarCh
             {
                 return nil
             }
-            return (_data as! CombinedChartData!).barData
+            return (_data as! CombinedChartData?)!.barData
         }
     }
     
@@ -152,7 +152,7 @@ open class CombinedChartView: BarLineChartViewBase, LineChartDataProvider, BarCh
             {
                 return nil
             }
-            return (_data as! CombinedChartData!).scatterData
+            return (_data as! CombinedChartData?)!.scatterData
         }
     }
     
@@ -166,7 +166,7 @@ open class CombinedChartView: BarLineChartViewBase, LineChartDataProvider, BarCh
             {
                 return nil
             }
-            return (_data as! CombinedChartData!).candleData
+            return (_data as! CombinedChartData?)!.candleData
         }
     }
     
@@ -180,7 +180,7 @@ open class CombinedChartView: BarLineChartViewBase, LineChartDataProvider, BarCh
             {
                 return nil
             }
-            return (_data as! CombinedChartData!).bubbleData
+            return (_data as! CombinedChartData?)!.bubbleData
         }
     }
     
@@ -189,22 +189,22 @@ open class CombinedChartView: BarLineChartViewBase, LineChartDataProvider, BarCh
     /// flag that enables or disables the highlighting arrow
     open var drawHighlightArrowEnabled: Bool
     {
-        get { return (renderer as! CombinedChartRenderer!).drawHighlightArrowEnabled }
-        set { (renderer as! CombinedChartRenderer!).drawHighlightArrowEnabled = newValue }
+        get { return (renderer as! CombinedChartRenderer?)!.drawHighlightArrowEnabled }
+        set { (renderer as! CombinedChartRenderer?)!.drawHighlightArrowEnabled = newValue }
     }
     
     /// if set to true, all values are drawn above their bars, instead of below their top
     open var drawValueAboveBarEnabled: Bool
         {
-        get { return (renderer as! CombinedChartRenderer!).drawValueAboveBarEnabled }
-        set { (renderer as! CombinedChartRenderer!).drawValueAboveBarEnabled = newValue }
+        get { return (renderer as! CombinedChartRenderer?)!.drawValueAboveBarEnabled }
+        set { (renderer as! CombinedChartRenderer?)!.drawValueAboveBarEnabled = newValue }
     }
     
     /// if set to true, a grey area is drawn behind each bar that indicates the maximum value
     open var drawBarShadowEnabled: Bool
     {
-        get { return (renderer as! CombinedChartRenderer!).drawBarShadowEnabled }
-        set { (renderer as! CombinedChartRenderer!).drawBarShadowEnabled = newValue }
+        get { return (renderer as! CombinedChartRenderer?)!.drawBarShadowEnabled }
+        set { (renderer as! CombinedChartRenderer?)!.drawBarShadowEnabled = newValue }
     }
     
     /// the order in which the provided data objects should be drawn.
@@ -214,11 +214,11 @@ open class CombinedChartView: BarLineChartViewBase, LineChartDataProvider, BarCh
     {
         get
         {
-            return (renderer as! CombinedChartRenderer!).drawOrder.map { $0.rawValue }
+            return (renderer as! CombinedChartRenderer?)!.drawOrder.map { $0.rawValue }
         }
         set
         {
-            (renderer as! CombinedChartRenderer!).drawOrder = newValue.map { DrawOrder(rawValue: $0)! }
+            (renderer as! CombinedChartRenderer?)!.drawOrder = newValue.map { DrawOrder(rawValue: $0)! }
         }
     }
 }

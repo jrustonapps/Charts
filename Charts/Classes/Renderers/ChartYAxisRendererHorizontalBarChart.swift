@@ -173,7 +173,7 @@ open class ChartYAxisRendererHorizontalBarChart: ChartYAxisRenderer
                 return
             }
             
-            ChartUtils.drawText(context: context, text: text, point: CGPoint(x: positions[i].x, y: fixedPosition - offset), align: .center, attributes: [NSFontAttributeName: labelFont, NSForegroundColorAttributeName: labelTextColor])
+            ChartUtils.drawText(context: context, text: text, point: CGPoint(x: positions[i].x, y: fixedPosition - offset), align: .center, attributes: [convertFromNSAttributedStringKey(NSAttributedString.Key.font): labelFont, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): labelTextColor])
         }
     }
 
@@ -291,7 +291,7 @@ open class ChartYAxisRendererHorizontalBarChart: ChartYAxisRenderer
             let label = l.label
 
             // if drawing the limit-value label is enabled
-            if (l.drawLabelEnabled && label.characters.count > 0)
+            if (l.drawLabelEnabled && label.count > 0)
             {
                 let labelLineHeight = l.valueFont.lineHeight
                 
@@ -306,7 +306,7 @@ open class ChartYAxisRendererHorizontalBarChart: ChartYAxisRenderer
                             x: position.x + xOffset,
                             y: viewPortHandler.contentTop + yOffset),
                         align: .left,
-                        attributes: [NSFontAttributeName: l.valueFont, NSForegroundColorAttributeName: l.valueTextColor])
+                        attributes: [convertFromNSAttributedStringKey(NSAttributedString.Key.font): l.valueFont, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): l.valueTextColor])
                 }
                 else if (l.labelPosition == .rightBottom)
                 {
@@ -316,7 +316,7 @@ open class ChartYAxisRendererHorizontalBarChart: ChartYAxisRenderer
                             x: position.x + xOffset,
                             y: viewPortHandler.contentBottom - labelLineHeight - yOffset),
                         align: .left,
-                        attributes: [NSFontAttributeName: l.valueFont, NSForegroundColorAttributeName: l.valueTextColor])
+                        attributes: [convertFromNSAttributedStringKey(NSAttributedString.Key.font): l.valueFont, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): l.valueTextColor])
                 }
                 else if (l.labelPosition == .leftTop)
                 {
@@ -326,7 +326,7 @@ open class ChartYAxisRendererHorizontalBarChart: ChartYAxisRenderer
                             x: position.x - xOffset,
                             y: viewPortHandler.contentTop + yOffset),
                         align: .right,
-                        attributes: [NSFontAttributeName: l.valueFont, NSForegroundColorAttributeName: l.valueTextColor])
+                        attributes: [convertFromNSAttributedStringKey(NSAttributedString.Key.font): l.valueFont, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): l.valueTextColor])
                 }
                 else
                 {
@@ -336,11 +336,16 @@ open class ChartYAxisRendererHorizontalBarChart: ChartYAxisRenderer
                             x: position.x - xOffset,
                             y: viewPortHandler.contentBottom - labelLineHeight - yOffset),
                         align: .right,
-                        attributes: [NSFontAttributeName: l.valueFont, NSForegroundColorAttributeName: l.valueTextColor])
+                        attributes: [convertFromNSAttributedStringKey(NSAttributedString.Key.font): l.valueFont, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): l.valueTextColor])
                 }
             }
         }
         
         context.restoreGState()
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }

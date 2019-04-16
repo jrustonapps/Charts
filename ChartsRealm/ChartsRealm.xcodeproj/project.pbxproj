@@ -93,13 +93,6 @@
 			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
 			remoteInfo = "Charts-TV";
 		};
-		5B88D8B31C63502500B54CBD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B88D8A91C63502400B54CBD /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
-			remoteInfo = ChartsTests;
-		};
 		5BF782691C83B091003A9E91 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5B88D8A91C63502400B54CBD /* Charts.xcodeproj */;
@@ -220,7 +213,6 @@
 				5B88D8B01C63502500B54CBD /* Charts.framework */,
 				5B88D8B21C63502500B54CBD /* Charts.framework */,
 				5BF7826A1C83B091003A9E91 /* Charts.framework */,
-				5B88D8B41C63502500B54CBD /* ChartsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -417,6 +409,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 5BA8EC361A9D14DC00CE82E1;
@@ -450,13 +443,6 @@
 			fileType = wrapper.framework;
 			path = Charts.framework;
 			remoteRef = 5B88D8B11C63502500B54CBD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B88D8B41C63502500B54CBD /* ChartsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChartsTests.xctest;
-			remoteRef = 5B88D8B31C63502500B54CBD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5BF7826A1C83B091003A9E91 /* Charts.framework */ = {
@@ -737,7 +723,7 @@
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -762,7 +748,7 @@
 				PRODUCT_NAME = ChartsRealm;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

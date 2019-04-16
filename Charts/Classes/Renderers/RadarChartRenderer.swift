@@ -194,8 +194,8 @@ open class RadarChartRenderer: LineRadarChartRenderer
                     text: formatter.string(from: e.value as NSNumber)!,
                     point: CGPoint(x: p.x, y: p.y - yoffset - valueFont.lineHeight),
                     align: .center,
-                    attributes: [NSFontAttributeName: valueFont,
-                        NSForegroundColorAttributeName: dataSet.valueTextColorAt(j)]
+                    attributes: [convertFromNSAttributedStringKey(NSAttributedString.Key.font): valueFont,
+                        convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): dataSet.valueTextColorAt(j)]
                 )
             }
         }
@@ -403,4 +403,9 @@ open class RadarChartRenderer: LineRadarChartRenderer
         
         context.restoreGState()
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }

@@ -299,9 +299,9 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
             context.saveGState()
             defer { context.restoreGState() }
             
-            let hasText = noDataText.characters.count > 0
+            let hasText = noDataText.count > 0
             var textHeight = hasText ? infoFont.lineHeight : 0.0
-            if let hasDescription = noDataTextDescription?.characters, hasDescription.count > 0
+            if let hasDescription = noDataTextDescription, hasDescription.count > 0
             {
                 textHeight += infoFont.lineHeight
             }
@@ -317,14 +317,14 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
                     text: noDataText,
                     point: CGPoint(x: frame.width / 2.0, y: y),
                     align: .center,
-                    attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: infoTextColor]
+                    attributes: [convertFromNSAttributedStringKey(NSAttributedString.Key.font): infoFont, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): infoTextColor]
                 )
                 y = y + infoFont.lineHeight
             }
             
-            if (noDataTextDescription != nil && (noDataTextDescription!).characters.count > 0)
+            if (noDataTextDescription != nil && (noDataTextDescription!).count > 0)
             {
-                ChartUtils.drawText(context: context, text: noDataTextDescription!, point: CGPoint(x: frame.width / 2.0, y: y), align: .center, attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: infoTextColor])
+                ChartUtils.drawText(context: context, text: noDataTextDescription!, point: CGPoint(x: frame.width / 2.0, y: y), align: .center, attributes: [convertFromNSAttributedStringKey(NSAttributedString.Key.font): infoFont, convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): infoTextColor])
             }
             
             return
@@ -361,8 +361,8 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
             #endif
         }
         
-        attrs[NSFontAttributeName] = font
-        attrs[NSForegroundColorAttributeName] = descriptionTextColor
+        attrs[convertFromNSAttributedStringKey(NSAttributedString.Key.font)] = font
+        attrs[convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor)] = descriptionTextColor
 
         if descriptionTextPosition == nil
         {
@@ -907,7 +907,7 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
     
     open func removeViewportJob(_ job: ChartViewPortJob)
     {
-        if let index = _viewportJobs.index(where: { $0 === job })
+        if let index = _viewportJobs.firstIndex(where: { $0 === job })
         {
             _viewportJobs.remove(at: index)
         }
@@ -1001,4 +1001,9 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
             super.nsuiTouchesCancelled(touches, with: event)
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }

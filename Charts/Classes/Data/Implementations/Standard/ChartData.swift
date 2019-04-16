@@ -108,7 +108,7 @@ open class ChartData: NSObject
         
         for i in 0 ..< _xVals.count
         {
-            sum += _xVals[i] == nil ? 0 : (_xVals[i]!).characters.count
+            sum += _xVals[i] == nil ? 0 : (_xVals[i]!).count
         }
         
         _xValAverageLength = Double(sum) / Double(_xVals.count)

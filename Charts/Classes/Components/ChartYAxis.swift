@@ -217,7 +217,7 @@ open class ChartYAxis: ChartAxisBase
     open func requiredSize() -> CGSize
     {
         let label = getLongestLabel() as NSString
-        var size = label.size(attributes: [NSFontAttributeName: labelFont])
+        var size = label.size(withAttributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): labelFont]))
         size.width += xOffset * 2.0
         size.height += yOffset * 2.0
         size.width = max(minWidth, min(size.width, maxWidth > 0.0 ? maxWidth : size.width))
@@ -237,7 +237,7 @@ open class ChartYAxis: ChartAxisBase
         {
             let text = getFormattedLabel(i)
             
-            if (longest.characters.count < text.characters.count)
+            if (longest.count < text.count)
             {
                 longest = text
             }
@@ -307,4 +307,15 @@ open class ChartYAxis: ChartAxisBase
         axisRange = abs(_axisMaximum - _axisMinimum)
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }

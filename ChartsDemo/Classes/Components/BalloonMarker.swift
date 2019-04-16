@@ -87,7 +87,7 @@ open class BalloonMarker: ChartMarker
         
         UIGraphicsPushContext(context)
         
-        labelns?.draw(in: rect, withAttributes: _drawAttributes)
+        //labelns?.draw(in: rect, withAttributes: _drawAttributes)
         
         UIGraphicsPopContext()
         
@@ -100,10 +100,10 @@ open class BalloonMarker: ChartMarker
         labelns = label as NSString
         
         _drawAttributes.removeAll()
-        _drawAttributes[NSFontAttributeName] = self.font
-        _drawAttributes[NSParagraphStyleAttributeName] = _paragraphStyle
+        //_drawAttributes[NSFontAttributeName] = self.font
+        //_drawAttributes[NSParagraphStyleAttributeName] = _paragraphStyle
         
-        _labelSize = labelns?.size(attributes: _drawAttributes) ?? CGSize.zero
+        //_labelSize = labelns?.size(attributes: _drawAttributes) ?? CGSize.zero
         _size.width = _labelSize.width + self.insets.left + self.insets.right
         _size.height = _labelSize.height + self.insets.top + self.insets.bottom
         _size.width = max(minimumSize.width, _size.width)
