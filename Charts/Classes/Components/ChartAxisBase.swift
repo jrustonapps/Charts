@@ -18,8 +18,8 @@ import CoreGraphics
 /// Base class for all axes
 open class ChartAxisBase: ChartComponentBase
 {
-    open var labelFont = NSUIFont.systemFont(ofSize: 10.0)
-    open var labelTextColor = NSUIColor.black
+    @objc open var labelFont = NSUIFont.systemFont(ofSize: 10.0)
+    @objc open var labelTextColor = NSUIColor.black
     
     open var axisLineColor = NSUIColor.gray
     open var axisLineWidth = CGFloat(0.5)
@@ -32,11 +32,11 @@ open class ChartAxisBase: ChartComponentBase
     open var gridLineDashLengths: [CGFloat]!
     open var gridLineCap = CGLineCap.butt
     
-    open var drawGridLinesEnabled = true
-    open var drawAxisLineEnabled = true
+    @objc open var drawGridLinesEnabled = true
+    @objc open var drawAxisLineEnabled = true
     
     /// flag that indicates of the labels of this axis should be drawn or not
-    open var drawLabelsEnabled = true
+    @objc open var drawLabelsEnabled = true
     
     /// array of limitlines that can be set for the axis
     private var _limitLines = [ChartLimitLine]()
@@ -44,7 +44,7 @@ open class ChartAxisBase: ChartComponentBase
     /// Are the LimitLines drawn behind the data or in front of the data?
     /// 
     /// **default**: false
-    open var drawLimitLinesBehindDataEnabled = false
+    @objc open var drawLimitLinesBehindDataEnabled = false
 
     /// the flag can be used to turn off the antialias for grid lines
     open var gridAntialiasEnabled = true

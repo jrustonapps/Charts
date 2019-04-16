@@ -45,7 +45,7 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
     /// - returns: the object representing all x-labels, this method can be used to
     /// acquire the XAxis object and modify it (e.g. change the position of the
     /// labels)
-    open var xAxis: ChartXAxis
+    @objc open var xAxis: ChartXAxis
     {
         return _xAxis
     }
@@ -67,13 +67,13 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
     private var _dragDecelerationFrictionCoef: CGFloat = 0.9
     
     /// Font object used for drawing the description text (by default in the bottom right corner of the chart)
-    open var descriptionFont: NSUIFont? = NSUIFont(name: "HelveticaNeue", size: 9.0)
+    @objc open var descriptionFont: NSUIFont? = NSUIFont(name: "HelveticaNeue", size: 9.0)
     
     /// Text color used for drawing the description text
-    open var descriptionTextColor: NSUIColor? = NSUIColor.black
+    @objc open var descriptionTextColor: NSUIColor? = NSUIColor.black
     
     /// Text align used for drawing the description text
-    open var descriptionTextAlign: NSTextAlignment = NSTextAlignment.right
+    @objc open var descriptionTextAlign: NSTextAlignment = NSTextAlignment.right
     
     /// Custom position for the description text in pixels on the screen.
     open var descriptionTextPosition: CGPoint? = nil
@@ -83,7 +83,7 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
     open var infoTextColor: NSUIColor! = NSUIColor(red: 247.0/255.0, green: 189.0/255.0, blue: 51.0/255.0, alpha: 1.0) // orange
     
     /// description text that appears in the bottom right corner of the chart
-    open var descriptionText = "Description"
+    @objc open var descriptionText = "Description"
     
     /// if true, units are drawn next to the values in the chart
     internal var _drawUnitInChart = false
@@ -95,7 +95,7 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
     internal var _legend: ChartLegend!
     
     /// delegate to receive chart events
-    open weak var delegate: ChartViewDelegate?
+    @objc open weak var delegate: ChartViewDelegate?
     
     /// text that is displayed when the chart is empty
     open var noDataText = "No chart data available."
@@ -747,7 +747,7 @@ open class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
     }
     
     /// - returns: the Legend object of the chart. This method can be used to get an instance of the legend in order to customize the automatically generated Legend.
-    open var legend: ChartLegend
+    @objc open var legend: ChartLegend
     {
         return _legend
     }

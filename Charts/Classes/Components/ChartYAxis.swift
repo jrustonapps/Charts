@@ -109,7 +109,7 @@ open class ChartYAxis: ChartAxisBase
     open var spaceBottom = CGFloat(0.1)
     
     /// the position of the y-labels relative to the chart
-    open var labelPosition = LabelPosition.outsideChart
+    @objc open var labelPosition = LabelPosition.outsideChart
     
     /// the side this axis object represents
     private var _axisDependency = AxisDependency.left

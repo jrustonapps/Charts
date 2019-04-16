@@ -21,9 +21,9 @@ import CoreGraphics
 
 open class ChartXAxisRenderer: ChartAxisRendererBase
 {
-    open var xAxis: ChartXAxis?
+    @objc open var xAxis: ChartXAxis?
   
-    public init(viewPortHandler: ChartViewPortHandler, xAxis: ChartXAxis, transformer: ChartTransformer!)
+    @objc public init(viewPortHandler: ChartViewPortHandler, xAxis: ChartXAxis, transformer: ChartTransformer!)
     {
         super.init(viewPortHandler: viewPortHandler, transformer: transformer)
         

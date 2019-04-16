@@ -44,7 +44,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     open var borderLineWidth: CGFloat = 1.0
     
     /// flag indicating if the grid background should be drawn or not
-    open var drawGridBackgroundEnabled = false
+    @objc open var drawGridBackgroundEnabled = false
     
     /// Sets drawing the borders rectangle to true. If this is enabled, there is no point drawing the axis-lines of x- and y-axis.
     open var drawBordersEnabled = false
@@ -1486,7 +1486,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     }
 
     /// is dragging enabled? (moving the chart with the finger) for the chart (this does not affect scaling).
-    open var dragEnabled: Bool
+    @objc open var dragEnabled: Bool
     {
         get
         {
@@ -1502,7 +1502,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     }
     
     /// is scaling enabled? (zooming in and out by gesture) for the chart (this does not affect dragging).
-    open func setScaleEnabled(_ enabled: Bool)
+    @objc open func setScaleEnabled(_ enabled: Bool)
     {
         if (_scaleXEnabled != enabled || _scaleYEnabled != enabled)
         {
@@ -1514,7 +1514,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
         }
     }
     
-    open var scaleXEnabled: Bool
+    @objc open var scaleXEnabled: Bool
     {
         get
         {
@@ -1532,7 +1532,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
         }
     }
     
-    open var scaleYEnabled: Bool
+    @objc open var scaleYEnabled: Bool
     {
         get
         {
@@ -1551,7 +1551,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     }
     
     /// flag that indicates if double tap zoom is enabled or not
-    open var doubleTapToZoomEnabled: Bool
+    @objc open var doubleTapToZoomEnabled: Bool
     {
         get
         {
@@ -1568,7 +1568,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     }
     
     /// flag that indicates if highlighting per dragging over a fully zoomed out chart is enabled
-    open var highlightPerDragEnabled = true
+    @objc open var highlightPerDragEnabled = true
     
     /// Set this to `true` to make the highlight full-bar oriented, `false` to make it highlight single values
     open var highlightFullBarEnabled: Bool = false
@@ -1663,14 +1663,14 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
 
     /// - returns: the left y-axis object. In the horizontal bar-chart, this is the
     /// top axis.
-    open var leftAxis: ChartYAxis
+    @objc open var leftAxis: ChartYAxis
     {
         return _leftAxis
     }
 
     /// - returns: the right y-axis object. In the horizontal bar-chart, this is the
     /// bottom axis.
-    open var rightAxis: ChartYAxis { return _rightAxis; }
+    @objc open var rightAxis: ChartYAxis { return _rightAxis; }
 
     /// - returns: the y-axis object to the corresponding AxisDependency. In the
     /// horizontal bar-chart, LEFT == top, RIGHT == BOTTOM
@@ -1687,7 +1687,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     }
     
     /// flag that indicates if pinch-zoom is enabled. if true, both x and y axis can be scaled simultaneously with 2 fingers, if false, x and y axis can be scaled separately
-    open var pinchZoomEnabled: Bool
+    @objc open var pinchZoomEnabled: Bool
     {
         get
         {

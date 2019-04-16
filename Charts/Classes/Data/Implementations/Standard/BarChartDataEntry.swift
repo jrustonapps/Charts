@@ -13,6 +13,7 @@
 
 import Foundation
 
+@objc
 open class BarChartDataEntry: ChartDataEntry
 {
     /// the values the stacked barchart holds
@@ -29,6 +30,7 @@ open class BarChartDataEntry: ChartDataEntry
         super.init()
     }
     
+    @objc
     /// Constructor for stacked bar entries.
     public init(values: [Double], xIndex: Int)
     {
@@ -38,13 +40,13 @@ open class BarChartDataEntry: ChartDataEntry
     }
     
     /// Constructor for normal bars (not stacked).
-    public override init(value: Double, xIndex: Int)
+    @objc public override init(value: Double, xIndex: Int)
     {
         super.init(value: value, xIndex: xIndex)
     }
     
     /// Constructor for stacked bar entries.
-    public init(values: [Double], xIndex: Int, label: String)
+    @objc public init(values: [Double], xIndex: Int, label: String)
     {
         super.init(value: BarChartDataEntry.calcSum(values), xIndex: xIndex, data: label)
         self.values = values

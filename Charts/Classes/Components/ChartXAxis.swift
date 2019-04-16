@@ -63,7 +63,7 @@ open class ChartXAxis: ChartAxisBase
     open var yAxisLabelModulus = Int(1)
 
     /// if set to true, the chart will avoid that the first and last label entry in the chart "clip" off the edge of the chart
-    open var avoidFirstLastClippingEnabled = false
+    @objc open var avoidFirstLastClippingEnabled = false
     
     /// Custom formatter for adjusting x-value strings
     private var _xAxisValueFormatter: ChartXAxisValueFormatter = ChartDefaultXAxisValueFormatter()
@@ -83,7 +83,7 @@ open class ChartXAxis: ChartAxisBase
     }
     
     /// the position of the x-labels relative to the chart
-    open var labelPosition = LabelPosition.top
+    @objc open var labelPosition = LabelPosition.top
     
     /// if set to true, word wrapping the labels will be enabled.
     /// word wrapping is done using `(value width * labelRotatedWidth)`

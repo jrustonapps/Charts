@@ -842,7 +842,7 @@ open class ChartData: NSObject
     }
     
     /// Sets the font for all value-labels for all DataSets this data object contains.
-    open func setValueFont(_ font: NSUIFont!)
+    @objc open func setValueFont(_ font: NSUIFont!)
     {
         for set in dataSets
         {

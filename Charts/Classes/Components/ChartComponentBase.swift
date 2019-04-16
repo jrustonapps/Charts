@@ -19,7 +19,7 @@ import CoreGraphics
 open class ChartComponentBase: NSObject
 {
     /// flag that indicates if this component is enabled or not
-    open var enabled = true
+    @objc open var enabled = true
     
     /// Sets the used x-axis offset for the labels on this axis.
     /// **default**: 5.0

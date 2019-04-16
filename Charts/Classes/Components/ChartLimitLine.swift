@@ -40,7 +40,7 @@ open class ChartLimitLine: ChartComponentBase
     open var valueFont = NSUIFont.systemFont(ofSize: 13.0)
     open var label = ""
     open var drawLabelEnabled = true
-    open var labelPosition = LabelPosition.rightTop
+    @objc open var labelPosition = LabelPosition.rightTop
     
     public override init()
     {

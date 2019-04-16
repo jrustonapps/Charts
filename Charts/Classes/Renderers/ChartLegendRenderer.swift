@@ -22,7 +22,7 @@ import CoreGraphics
 open class ChartLegendRenderer: ChartRendererBase
 {
     /// the legend object this renderer renders
-    open var legend: ChartLegend?
+    @objc open var legend: ChartLegend?
 
     public init(viewPortHandler: ChartViewPortHandler, legend: ChartLegend?)
     {
