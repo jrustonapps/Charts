@@ -130,7 +130,7 @@ open class ChartAxisBase: ChartComponentBase
     /// The minimum value for this axis.
     /// If set, this value will not be calculated automatically depending on the provided data.
     /// Use `resetCustomAxisMin()` to undo this.
-    open var axisMinValue: Double
+    @objc open var axisMinValue: Double
     {
         get
         {
@@ -146,7 +146,7 @@ open class ChartAxisBase: ChartComponentBase
     /// The maximum value for this axis.
     /// If set, this value will not be calculated automatically depending on the provided data.
     /// Use `resetCustomAxisMin()` to undo this.
-    open var axisMaxValue: Double
+    @objc open var axisMaxValue: Double
     {
         get
         {

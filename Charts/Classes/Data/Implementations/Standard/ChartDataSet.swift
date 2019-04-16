@@ -65,7 +65,7 @@ open class ChartDataSet: ChartBaseDataSet
     internal var _lastEnd: Int = 0
     
     /// the array of y-values that this DataSet represents.
-    open var yVals: [ChartDataEntry]
+    @objc open var yVals: [ChartDataEntry]
     {
         get
         {

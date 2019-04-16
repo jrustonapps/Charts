@@ -57,7 +57,7 @@ open class ChartYAxis: ChartAxisBase
     
     /// This property is deprecated - Use `axisMinValue` instead.
     @available(*, deprecated:1.0, message:"Use axisMinValue instead.")
-    open var startAtZeroEnabled: Bool
+    @objc open var startAtZeroEnabled: Bool
     {
         get
         {

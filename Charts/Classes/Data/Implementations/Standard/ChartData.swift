@@ -352,7 +352,7 @@ open class ChartData: NSObject
     }
     
     /// - returns: the array of ChartDataSets this object holds.
-    open var dataSets: [IChartDataSet]
+    @objc open var dataSets: [IChartDataSet]
     {
         get
         {
@@ -824,7 +824,7 @@ open class ChartData: NSObject
     }
     
     /// Sets a custom ValueFormatter for all DataSets this data object contains.
-    open func setValueFormatter(_ formatter: NumberFormatter!)
+    @objc open func setValueFormatter(_ formatter: NumberFormatter!)
     {
         for set in dataSets
         {
@@ -833,7 +833,7 @@ open class ChartData: NSObject
     }
     
     /// Sets the color of the value-text (color in which the value-labels are drawn) for all DataSets this data object contains.
-    open func setValueTextColor(_ color: NSUIColor!)
+    @objc open func setValueTextColor(_ color: NSUIColor!)
     {
         for set in dataSets
         {

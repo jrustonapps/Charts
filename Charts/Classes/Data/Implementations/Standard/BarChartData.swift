@@ -26,7 +26,7 @@ open class BarChartData: BarLineScatterCandleBubbleChartData
         super.init(xVals: xVals, dataSets: dataSets)
     }
     
-    public override init(xVals: [NSObject]?, dataSets: [IChartDataSet]?)
+    @objc public override init(xVals: [NSObject]?, dataSets: [IChartDataSet]?)
     {
         super.init(xVals: xVals, dataSets: dataSets)
     }

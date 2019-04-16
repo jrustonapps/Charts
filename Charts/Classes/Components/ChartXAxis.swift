@@ -48,7 +48,7 @@ open class ChartXAxis: ChartAxisBase
     /// This only applies if the number of labels that will be skipped in between drawn axis labels is not custom set.
     /// 
     /// **default**: 4
-    open var spaceBetweenLabels = Int(4)
+    @objc open var spaceBetweenLabels = Int(4)
     
     /// the modulus that indicates if a value at a specified index in an array(list) for the x-axis-labels is drawn or not. Draw when `(index % modulus) == 0`.
     open var axisLabelModulus = Int(1)
@@ -70,7 +70,7 @@ open class ChartXAxis: ChartAxisBase
     
     /// Custom XValueFormatter for the data object that allows custom-formatting of all x-values before rendering them.
     /// Provide null to reset back to the default formatting.
-    open var valueFormatter: ChartXAxisValueFormatter?
+    @objc open var valueFormatter: ChartXAxisValueFormatter?
     {
         get
         {
@@ -89,13 +89,13 @@ open class ChartXAxis: ChartAxisBase
     /// word wrapping is done using `(value width * labelRotatedWidth)`
     ///
     /// *Note: currently supports all charts except pie/radar/horizontal-bar*
-    open var wordWrapEnabled = false
+    @objc open var wordWrapEnabled = false
     
     /// the width for wrapping the labels, as percentage out of one value width.
     /// used only when wordWrapEnabled = true.
     /// 
     /// **default**: 1.0
-    open var wordWrapWidthPercent: CGFloat = 1.0
+    @objc open var wordWrapWidthPercent: CGFloat = 1.0
     
     public override init()
     {
@@ -124,7 +124,7 @@ open class ChartXAxis: ChartAxisBase
     /// Sets the number of labels that should be skipped on the axis before the next label is drawn. 
     /// This will disable the feature that automatically calculates an adequate space between the axis labels and set the number of labels to be skipped to the fixed number provided by this method. 
     /// Call `resetLabelsToSkip(...)` to re-enable automatic calculation.
-    open func setLabelsToSkip(_ count: Int)
+    @objc open func setLabelsToSkip(_ count: Int)
     {
         _isAxisModulusCustom = true
 

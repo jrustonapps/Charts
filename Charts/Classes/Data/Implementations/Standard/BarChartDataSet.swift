@@ -31,7 +31,7 @@ open class BarChartDataSet: BarLineScatterCandleBubbleChartDataSet, IBarChartDat
         initialize()
     }
     
-    public override init(yVals: [ChartDataEntry]?, label: String?)
+    @objc public override init(yVals: [ChartDataEntry]?, label: String?)
     {
         super.init(yVals: yVals, label: label)
         initialize()
